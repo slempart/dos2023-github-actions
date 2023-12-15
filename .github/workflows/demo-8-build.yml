@@ -1,7 +1,7 @@
-name: build .Net 6 
+name: build .Net 6
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 jobs:
   build:
@@ -12,6 +12,7 @@ jobs:
       - name: Setup
         uses: actions/setup-dotnet@v4
         with:
+          # Wir wollen .Net 6.0.x
           dotnet-version: 6.0.x
       - name: Restore Dependencies
         run: |
@@ -20,8 +21,8 @@ jobs:
       - name: Build
         run: |
           dotnet build --no-restore DemoApp/Client/src/Client.csproj
-          dotnet build --no-restore DemoApp/Server/src/Server.csproj 
+          dotnet build --no-restore DemoApp/Server/src/Server.csproj
       - name: Publish
         run: |
           dotnet publish --no-build DemoApp/Client/src/Client.csproj
-          dotnet publish --no-build DemoApp/Server/src/Server.csproj 
+          dotnet publish --no-build DemoApp/Server/src/Server.csproj
