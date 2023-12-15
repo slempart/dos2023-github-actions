@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Say a Secret
-        run: echo "Hallo {{ secrets.MY_SAMPLE_SECRET}}"
+        run: echo "Hallo ${{ secrets.MY_SAMPLE_SECRET}}"
