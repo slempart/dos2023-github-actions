@@ -1,7 +1,7 @@
-name: demo-5  
+name: demo-5
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 jobs:
   run-with-mc:
     runs-on: ubuntu-latest
