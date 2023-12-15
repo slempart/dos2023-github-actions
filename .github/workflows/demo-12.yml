@@ -22,7 +22,7 @@ jobs:
       - name: Build
         run: dotnet build -c -release --no-restore DemoApp/Server/src/Server.csproj
       - name: Publish
-        run: dotnet publish -o DemoApp/Server/out -no-build DemoApp/Server/src/Server.csproj
+        run: dotnet publish -o DemoApp/Server/out --no-build DemoApp/Server/src/Server.csproj
       - name: Login to Github Container Registry (GHCR)
         uses: docker/login-action@v3
         with:
