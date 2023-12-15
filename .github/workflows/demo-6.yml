@@ -10,4 +10,4 @@ jobs:
         id: step-1
         run: echo "field_step_one=My Value Is 42" >> $GITHUB_OUTPUT
       - name: step two
-        run: echo "my out value is ${{ steps.step-1.output.field_step_one }}"
+        run: echo "my out value is ${{ steps.step-1.outputs.field_step_one }}"
