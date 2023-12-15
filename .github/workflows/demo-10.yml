@@ -5,7 +5,8 @@ on:
   workflow_dispatch:
 jobs:
   jobSource:
-    runs-on: windows-latest
+    # mal mit Windows
+    runs-on: windows-latest 
     steps:
       - id: step1
         name: Step 1
