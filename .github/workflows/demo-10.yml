@@ -6,10 +6,12 @@ on:
 jobs:
   jobSource:
     runs-on: ubuntu-latest
+    
     steps:
       - id: step1
         name: Step 1
         run: echo "varInStep=hallo world" >> $GITHUB_OUTPUT
+        shell: pwsh
     outputs:
       greeting: ${{ steps.step1.outputs.varInStep }}
   jobTarget:
