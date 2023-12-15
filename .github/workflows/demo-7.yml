@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Say Hallo
-        run: echo "Hallo $USER_NAME"
+        run: echo "Hallo $DEMO_USER_NAME"
