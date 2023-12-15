@@ -8,3 +8,6 @@ jobs:
     steps:
       - name: Say Hallo
         run: echo "Hallo $DEMO_USER_NAME"
+        env:
+          DEMO_USER_NAME: Max Mustermann
+        
