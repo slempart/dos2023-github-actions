@@ -1,0 +1,32 @@
+name: Build OCI .Net 6
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: devopenspace2023
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup
+        uses: actions/setup-dotnet@v4
+        with:
+          # Wir wollen .Net 6.0.x
+          dotnet-version: 6.0.x
+      - name: Restore Dependencies
+        run: dotnet restore DemoApp/Server/src/Server.csproj
+      - name: Build
+        run: dotnet build --no-restore DemoApp/Server/src/Server.csproj
+      - name: Publish
+        run: dotnet publish --no-build DemoApp/Server/src/Server.csproj
+      - name: Login to Github Container Registry (GHCR)
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.registry_owner}}
+          password: ${{ secrets.GITHUB_TOKEN }}
+        
