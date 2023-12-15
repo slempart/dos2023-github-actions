@@ -19,4 +19,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Say Hallo
-        run: echo "Hallo ich bin ${{ inputs.name }}. Meine Laune ist ${{ inputs.laune }}"
+        run: echo "Hallo ich bin ${{ inputs.name }}. Meine Laune ist ${{ inputs.laune }}."
